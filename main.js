@@ -36,9 +36,28 @@ const movePiece = () => {
 }
 
 // Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
-const isLegal = () => {
-  // Your code here
+const isLegal = (startStack, endStack) => {
+  // Check to see if the startStack and endStack values are either 'a', 'b', or 'c'
+  if ( (startStack !== 'a' || startStack !== 'b' || startStack !== 'c') && (endStack !== 'a' || endStack !== 'b' || endStack !== 'c') ) {
+    return false;
+  } else {
+    console.log('valid piece');
+  }
 
+  // // If the stack that you are moving to is empty
+  // if (stacks[endStack].length  === 0) {
+  //   return true;
+  // }
+
+  // // get the value of the last block in the stacks
+  // let startBlockPosition = stacks[startStack].length - 1;
+  // let startBlockValue = stacks[startStack][startBlockPosition];
+
+  // let endBlockPosition = stacks[endStack].length - 1;
+  // let endBlockValue = stacks[endStack][endBlockPosition];
+
+  // // make sure the block that you are moving to is bigger than the block you are moving
+  // return startBlockPosition < endBlockPosition;
 }
 
 // What is a win in Towers of Hanoi? When should this function run?
@@ -50,7 +69,7 @@ const checkForWin = () => {
 // When is this function called? What should it do with its argument?
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
-
+  console.log(isLegal(startStack, endStack));
 }
 
 const getPrompt = () => {
