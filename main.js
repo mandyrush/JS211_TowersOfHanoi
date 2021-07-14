@@ -42,7 +42,7 @@ const stackHasDisc = (stack) => {
 }
 
 const validStackEntry = (startStack, endStack) => {
-  return (startStack === 'a' || startStack === 'b' || startStack === 'c') && (endStack === 'a' || endStack === 'b' || endStack === 'c');
+  return stacks[startStack] !== undefined && stacks[endStack] !== undefined;
 }
 
 const validBlockMove = (startStack, endStack) => {
